@@ -8,9 +8,12 @@
 # Return performer_names sorted in descending order by the performance durations.
 
 def sort_performers(performer_names, performance_times):
-    dic = dict(zip(performer_names, performance_times))
-    list_sort = [name for name, _ in sorted(zip(performer_names, performance_times), key=lambda item: item[1], reverse=True)]
-    return list_sort
+    zipped_list = zip(performer_names, performance_times)
+    list_sort = sorted(zipped_list, key=lambda item: item[1], reverse=True)
+    name_list = [name for name, time in list_sort]
+   
+
+    return name_list
 #     """
 #     :type performer_names: List[str]
 #     :type performance_times: List[int]
