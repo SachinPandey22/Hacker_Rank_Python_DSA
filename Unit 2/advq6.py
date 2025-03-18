@@ -5,23 +5,23 @@
 # illegibles and returns the most frequent word in text that is not an illegible word.
 
 def find_most_frequent_word(text, illegibles):
-    lst = text.lower().translate().split()
+    lst = text.lower().split()
     count_dic = {}
     for wrd in lst:
         if wrd in count_dic and wrd not in illegibles:
             count_dic[wrd] += 1
         else:
             count_dic[wrd] = 1
-    # max_count = max(count_dic.values())
-    # for w, count in count_dic.items():
-    #     if count == max_count:
-    #         return w
+    max_count = max(count_dic.values())
+    for w, count in count_dic.items():
+        if count == max_count:
+            return w
     print(count_dic)
 paragraph1 = "a."
 illegibles1 = []
 print(find_most_frequent_word(paragraph1, illegibles1)) 
 
-paragraph2 = "Bob hit a ball, the hit BALL flew far after it was hit."
+paragraph2 = "Bob hit a ball the hit BALL flew far after it was hit."
 illegibles2 = ["hit"]
 print(find_most_frequent_word(paragraph2, illegibles2)) 
 # Example Output:
