@@ -8,13 +8,19 @@ class Node:
 
 tom_nook = Node("Tom Nook")
 tommy = Node("Tommy") 
-tom_nook.value = "Tom Nook"
-tommy.value = "Tommy"
-tom_nook.next = tommy 
-print(tom_nook.value) 
-print(tom_nook.next.value) 
-print(tommy.value) 
-print(tommy.next) 
+timmy = Node("Timmy")
+tom_nook.next = timmy
+timmy.next = tommy
+# print(tom_nook.value) 
+# print(tom_nook.next.value) 
+# print(tommy.value) 
+# print(tommy.next) 
+print(tom_nook.value)
+print(tom_nook.next.value)
+print(timmy.value)
+print(timmy.next.value)
+print(tommy.value)
+print(tommy.next)
 # Example Output:
 
 
