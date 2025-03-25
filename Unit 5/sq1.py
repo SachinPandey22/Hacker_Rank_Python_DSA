@@ -24,9 +24,21 @@ class Villager:
         lst = ["acoustic guitar", "ironwood kitchenette", "rattan armchair", "kotatsu", "cacao tree"]
         if item_name in lst:
             self.furniture.append(item_name)
+    def print_inventory(self):
+        inventory_dic = {}
+        if not self.furniture:
+            print("Inventory Empty")
+            return
+        for inv in self.furniture:
+            if inv in inventory_dic:
+                inventory_dic[inv] += 1
+            else:
+                inventory_dic[inv] = 1
+        inv = ",".join(f"{items}: {Count}" for items, Count in inventory_dic.items())
+        print(inv)
+         
             
         
-
 apollo = Villager( "Apollo", "Eagle", "pah")
 bones = Villager("Bones", "Dog", "yip yip")
 # Instantiate your villager here
@@ -37,12 +49,12 @@ bones = Villager("Bones", "Dog", "yip yip")
 # print(apollo.catchphrase) 
 # print(apollo.furniture) 
 # bones.catchphrase = "ruff it up"
-alice = Villager("Alice", "Koala", "guvnor")
+# alice = Villager("Alice", "Koala", "guvnor")
 
-alice.set_catchphrase("sweet dreams")
-print(alice.catchphrase)
-alice.set_catchphrase("#?!")
-print(alice.catchphrase)
+# alice.set_catchphrase("sweet dreams")
+# print(alice.catchphrase)
+# alice.set_catchphrase("#?!")
+# print(alice.catchphrase)
 
 # print(bones.greet_player("Samia"))
 # print(bones.name)
@@ -50,20 +62,22 @@ print(alice.catchphrase)
 # print(bones.catchphrase) 
 # print(bones.furniture) 
 # print(bones.greet_player("Sachin"))
-# Example Output:
 
-# Apollo
-# Eagle
-# pah
-# []
+# alice = Villager("Alice", "Koala", "guvnor")
+# print(alice.furniture)
+
+# alice.add_item("acoustic guitar")
+# print(alice.furniture)
+
+# alice.add_item("cacao tree")
+# print(alice.furniture)
+
+# alice.add_item("nintendo switch")
+# print(alice.furniture)
+
 alice = Villager("Alice", "Koala", "guvnor")
-print(alice.furniture)
 
-alice.add_item("acoustic guitar")
-print(alice.furniture)
+alice.print_inventory()
 
-alice.add_item("cacao tree")
-print(alice.furniture)
-
-alice.add_item("nintendo switch")
-print(alice.furniture)
+alice.furniture = ["acoustic guitar", "ironwood kitchenette", "kotatsu", "kotatsu"]
+alice.print_inventory()
