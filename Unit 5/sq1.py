@@ -10,15 +10,34 @@ class Villager:
         self.species = species
         self.catchphrase = catchphrase
         self.furniture = []
-apollo = Villager( "Apollo", "Eagle", "pah")
+    # def set_catchphrase(self, new_catchphrase):
+    #     # Check if the catchphrase is less than 20 characters and contains only letters and spaces
+    #     if len(new_catchphrase) < 20 and re.fullmatch(r"[A-Za-z ]+", new_catchphrase):
+    #         self.catchphrase = new_catchphrase
+    #         print("Catchphrase Updated!")
+    #     else:
+    #         print("Invalid catchphrase")
+    def greet_player(self, player_name):
+        return f"{self.name}: Hey there, {player_name}! How's it going, {self.catchphrase}!"
 
+
+apollo = Villager( "Apollo", "Eagle", "pah")
+bones = Villager("Bones", "Dog", "yip yip")
 # Instantiate your villager here
 # Example Usage:
 
-print(apollo.name)  
-print(apollo.species)  
-print(apollo.catchphrase) 
-print(apollo.furniture) 
+# print(apollo.name)  
+# print(apollo.species)  
+# print(apollo.catchphrase) 
+# print(apollo.furniture) 
+bones.catchphrase = "ruff it up"
+
+print(bones.greet_player("Samia"))
+print(bones.name)
+print(bones.species)  
+print(bones.catchphrase) 
+print(bones.furniture) 
+print(bones.greet_player("Sachin"))
 # Example Output:
 
 # Apollo
