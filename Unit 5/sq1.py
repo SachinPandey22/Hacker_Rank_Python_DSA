@@ -5,6 +5,7 @@
 
 # The Villager object created should have the name "Apollo", the species "Eagle", and the catchphrase "pah".
 class Villager:
+    
     def __init__(self, name, species, catchphrase):
         self.name = name
         self.species = species
@@ -19,7 +20,12 @@ class Villager:
             print("Invalid catchphrase")
     def greet_player(self, player_name):
         return f"{self.name}: Hey there, {player_name}! How's it going, {self.catchphrase}!"
-
+    def add_item(self, item_name):
+        lst = ["acoustic guitar", "ironwood kitchenette", "rattan armchair", "kotatsu", "cacao tree"]
+        if item_name in lst:
+            self.furniture.append(item_name)
+            
+        
 
 apollo = Villager( "Apollo", "Eagle", "pah")
 bones = Villager("Bones", "Dog", "yip yip")
@@ -50,3 +56,14 @@ print(alice.catchphrase)
 # Eagle
 # pah
 # []
+alice = Villager("Alice", "Koala", "guvnor")
+print(alice.furniture)
+
+alice.add_item("acoustic guitar")
+print(alice.furniture)
+
+alice.add_item("cacao tree")
+print(alice.furniture)
+
+alice.add_item("nintendo switch")
+print(alice.furniture)
