@@ -6,9 +6,10 @@
 # The Villager object created should have the name "Apollo", the species "Eagle", and the catchphrase "pah".
 class Villager:
     
-    def __init__(self, name, species, catchphrase):
+    def __init__(self, name, species, personality, catchphrase):
         self.name = name
         self.species = species
+        self.personality = personality
         self.catchphrase = catchphrase
         self.furniture = []
     def set_catchphrase(self, new_catchphrase):
@@ -36,11 +37,17 @@ class Villager:
                 inventory_dic[inv] = 1
         inv = ",".join(f"{items}: {Count}" for items, Count in inventory_dic.items())
         print(inv)
-         
+def of_personality_type(townies, personality_type):
+    for nam in townies:
+        result = []
+        for town in townies:
+            if personality_type == town.personality:
+                result.append(town.name)
+        return result
             
         
-apollo = Villager( "Apollo", "Eagle", "pah")
-bones = Villager("Bones", "Dog", "yip yip")
+# apollo = Villager( "Apollo", "Eagle", "pah")
+# bones = Villager("Bones", "Dog", "yip yip")
 # Instantiate your villager here
 # Example Usage:
 
@@ -75,9 +82,16 @@ bones = Villager("Bones", "Dog", "yip yip")
 # alice.add_item("nintendo switch")
 # print(alice.furniture)
 
-alice = Villager("Alice", "Koala", "guvnor")
+# alice = Villager("Alice", "Koala", "guvnor")
 
-alice.print_inventory()
+# alice.print_inventory()
 
-alice.furniture = ["acoustic guitar", "ironwood kitchenette", "kotatsu", "kotatsu"]
-alice.print_inventory()
+# alice.furniture = ["acoustic guitar", "ironwood kitchenette", "kotatsu", "kotatsu"]
+# alice.print_inventory()
+
+isabelle = Villager("Isabelle", "Dog", "Normal", "what's up?")
+bob = Villager("Bob", "Cat", "Lazy", "pthhhpth")
+stitches = Villager("Stitches", "Cub", "Lazy", "stuffin'")
+
+print(of_personality_type([isabelle, bob, stitches], "Lazy"))
+print(of_personality_type([isabelle, bob, stitches], "Cranky"))
