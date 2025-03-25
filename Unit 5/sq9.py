@@ -11,16 +11,21 @@ tommy = Node("Tommy")
 timmy = Node("Timmy")
 tom_nook.next = timmy
 timmy.next = tommy
+
+tom_nook.next = None
+saharah = Node("Saharah")
+tommy.next = saharah
+saharah.next = None
 # print(tom_nook.value) 
 # print(tom_nook.next.value) 
 # print(tommy.value) 
 # print(tommy.next) 
-print(tom_nook.value)
-print(tom_nook.next.value)
-print(timmy.value)
-print(timmy.next.value)
-print(tommy.value)
-print(tommy.next)
+# print(tom_nook.value)
+# print(tom_nook.next.value)
+# print(timmy.value)
+# print(timmy.next.value)
+# print(tommy.value)
+# print(tommy.next)
 # Example Output:
 
 
@@ -28,3 +33,10 @@ print(tommy.next)
 # Tommy
 # Tommy
 # None
+print(tom_nook.next) 
+print(timmy.value) 
+print(timmy.next.value)  
+print(tommy.value) 
+print(tommy.next.value)
+print(saharah.value)  
+print(saharah.next) 
